@@ -16,7 +16,7 @@ There aren't any posts here yet. Check back soon!
   <div class='blogpost'>
     <div id='date'>
       <div id='day'>{{ post.date | date: "%-d" }}</div>
-      <div id='month'>{{ post.date | date: "%B %Y" }}</div>
+      <div id='month'>{{ post.date | date: "%b %Y" }}</div>
     </div>
     <div id='overview'>
       <div id='title'><a href="{{ post.url }}">{{ post.title }}</a></div>
