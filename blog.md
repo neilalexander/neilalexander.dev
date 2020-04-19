@@ -12,11 +12,16 @@ redirect_from:
 {% unless indexable_posts.size > 0 %}
 There aren't any posts here yet. Check back soon!
 {% else %}
-  <ul>
   {% for post in indexable_posts %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
+  <div class='blogpost'>
+    <div id='date'>
+      <div id='day'>{{ post.date | date: "%-d" }}</div>
+      <div id='month'>{{ post.date | date: "%B %Y" }}</div>
+    </div>
+    <div id='overview'>
+      <div id='title'><a href="{{ post.url }}">{{ post.title }}</a></div>
+      <div id='excerpt'>{{ post.excerpt | strip_html | truncatewords: 10 }}</div>
+    </div>
+  </div>
   {% endfor %}
-  </ul>
 {% endunless %}

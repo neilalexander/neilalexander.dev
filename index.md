@@ -9,11 +9,11 @@ I also have experience in end-user compute and enterprise-scale systems architec
 {% assign indexable_posts = site.posts | where: "index",true %}
 
 {% unless indexable_posts.size == 0 %}
-## Latest Posts
+## Latest
 <ul>
 {% for post in indexable_posts limit:5 %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      {{ post.date | date: "%d %b %Y" }} — <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
 {% endfor %}
 </ul>
