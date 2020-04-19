@@ -1,0 +1,29 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+div.linkmenu {
+	float: right;
+}
+
+div.titleflex {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #eaecef;
+	margin-bottom: 2em;
+}
+
+div.titleflex span.logo {
+}
+
+div.titleflex span.links {
+}
+
+div.titleflex span.links a {
+	display: inline-block;
+	padding: 1em;
+}

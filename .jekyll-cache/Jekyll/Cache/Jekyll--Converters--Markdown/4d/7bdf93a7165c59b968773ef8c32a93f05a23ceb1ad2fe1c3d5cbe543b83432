@@ -1,0 +1,12 @@
+I"1<h1 id="seaglass">Seaglass</h1>
+
+<p>Seaglass is an in-development Matrix client for macOS, written in Swift 4.
+Seaglass is familiar, consistent and aims to be the most beautiful Matrix client
+possible.</p>
+
+<ul>
+  <li>Download our <a href="https://bintray.com/neilalexander/Seaglass/Seaglass#files">latest CI builds</a> and give it a try</li>
+  <li>View the <a href="https://github.com/neilalexander/seaglass">source code</a> on the GitHub repository﻿</li>
+  <li>Join us in the <a href="https://matrix.to/#/#seaglass:matrix.org">Matrix channel</a></li>
+</ul>
+:ET

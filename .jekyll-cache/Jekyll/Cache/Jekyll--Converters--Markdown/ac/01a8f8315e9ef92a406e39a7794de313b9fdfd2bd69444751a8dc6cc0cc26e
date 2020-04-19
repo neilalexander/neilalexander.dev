@@ -1,0 +1,239 @@
+I"�7<p><strong>Updated 17th January 2019</strong></p>
+
+<p>Merging their partnership with FON with their own commercial BT Openzone Wi-Fi network, BT now provide a large-scale Wi-Fi service in the United Kingdom under the name “BT Wi-Fi”. With this, BT Broadband (and one-off paying) customers are able to access BT Wi-Fi not just from commercial locations but also from households with the BT Wi-Fi service broadcasting from their BT Home Hubs. </p>
+
+<p>However, the BT Wi-Fi service has it’s downsides. If you are using a computer and you connect to the “BTWiFi-with-FON” SSID, then there is no wireless encryption (like WPA) of any kind between your device and the hotspot. This means that your traffic, if not encrypted through some other means, is susceptible to eavesdropping by a nearby adversary. This can put you and your data/passwords at risk. This is actually a common problem with many public Wi-Fi hotspots, and an issue that not many users are educated on. Be cautious of any unsecured networks, kids!</p>
+
+<p>Secondly, and somewhat unrelated, the service will not “remember” you and will expect you to log back in each time you roam to a new hotspot or after having been away from a given hotspot for a period of time. This can become somewhat tedious if you are a frequent user of the service.</p>
+
+<p>It is possible, however, to securely connect to the BT Wi-Fi service using a WPA-encrypted wireless connection, and to be automatically logged in at the same time, by making use of an alternative wireless SSID currently used only by iOS devices with the BT Wi-Fi app installed. This article explores the working parts of the authenticated login and how to configure it on other devices.</p>
+
+<h4 id="introducing-8021x">Introducing 802.1X</h4>
+
+<p>802.1X is an authentication mechanism for network access points. There are both wireless and wired variants, and both support a number of authentication mechanisms, including certificate-based, SIM-based and integrated Windows logon, amongst others. The commonly adopted wireless variant is known as “WPA/WPA2 Enterprise”.</p>
+
+<p>The “BTWifi-X” SSID broadcasted by BT Home Hubs is a “WPA2 Enterprise”-enabled SSID. It supports authentication using EAP-TTLS, which is effectively certificate-based authentication in combination with a username and password. This means that, once authenticated, any traffic between the client device and the hotspot is encrypted. Furthermore, the username and password supplied in the profile allow the device to prove it’s identity to the BT Wi-Fi service automatically, allowing automatic login.</p>
+
+<p>It is this “BTWifi-X” SSID that we are interested in.</p>
+
+<h4 id="obtaining-the-configuration-profile">Obtaining the Configuration Profile</h4>
+
+<p>iOS devices are able to take advantage of the secure “BTWifi-X” SSID by installing a configuration profile from the BT Wi-Fi app from the App Store, or more accurately, from a webpage linked from the BT Wi-Fi app. The Configuration Profile is a “mobileconfig” file, specifically for iOS devices, which contains all of the relevant settings to make a secure connection. It includes the BT Wi-Fi security certificates, and your automatic login credentials. In order to continue, you will need to retrieve one of these profiles.</p>
+
+<p>These instructions assume that you have reasonable technical know-how, access to an iOS device and that you are a BT Broadband account holder. You can borrow an iOS device temporarily to complete these steps, and you do not need to be in range of a BT Wi-Fi hotspot to acquire the profile. </p>
+
+<ol>
+  <li>
+    <p>Install and open the BT Wi-Fi app, and go into the “More” tab.</p>
+  </li>
+  <li>
+    <p>Select “Settings” and then tap “Install connection profile”.</p>
+  </li>
+  <li>
+    <p>Enter your BT email address and password, tap “Install connection profile”. You must log in with your email address here instead of your username, or otherwise the “Install connection profile” option will not be shown.</p>
+  </li>
+  <li>
+    <p>Wait until you are redirected into Safari.</p>
+  </li>
+  <li>
+    <p>Once the device has jumped to Safari, cancel the prompt to install the profile on your device and then copy the URL from the address bar.</p>
+  </li>
+  <li>
+    <p>Send the link to your computer (by email, instant message or some other medium) and open the page in your web browser. The link may expire after some time so aim to do this quickly.</p>
+  </li>
+  <li>
+    <p>Open the page’s source using your browser’s developer tools and find the direct link to download the “mobileconfig” hidden in the <code class="highlighter-rouge">&lt;script&gt;</code> section of the HTML.</p>
+  </li>
+  <li>
+    <p>Upon navigating to this URL, you should be prompted to download the “mobileconfig” file. Save it to your computer and open it in the text editor of your choice.</p>
+  </li>
+  <li>
+    <p>If you borrowed an iOS device to complete these steps, then from this point forward, you no longer need it and can uninstall the BT Wi-Fi app.</p>
+  </li>
+</ol>
+
+<p>PLEASE NOTE that this “mobileconfig” file uniquely identifies you, and contains your authentication credentials. Do not share any part of your “mobileconfig” with anyone else. Please see the Important Warning at the bottom of this article for more information.</p>
+
+<h4 id="configuring-the-8021x-connection-on-macos">Configuring the 802.1.X connection on macOS</h4>
+
+<p>If you just want to enable the automatic login to BT Wi-Fi from your macOS computer, then you need not dissect the Configuration Profile. Instead, just double-click the “mobileconfig” from Finder, agree to install the profile and the “BTWifi-X” wireless network will be configured automatically. </p>
+
+<h4 id="dissecting-the-configuration-profile">Dissecting the Configuration Profile</h4>
+
+<p>If you want to configure automatic login from another device that does not run iOS or macOS, then you will need to extract the relevant information from the “mobileconfig” file.</p>
+
+<p>The Configuration Profile is actually an XML document. It is signed and more than likely contains some garbage-looking characters at the beginning and end of the document, but these are actually certificates and signatures. The relevant and interesting section is the readable XML in the middle of the file.</p>
+
+<p>There are two sections that are relevant. The first is the section that contains your (unique) automatic login username and password, as shown below:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;key&gt;TTLSInnerAuthentication&lt;/key&gt;
+&lt;string&gt;PAP&lt;/string&gt;
+&lt;key&gt;UserName&lt;/key&gt;
+&lt;string&gt;8021x:BTRCon/newprof/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXX-XXX&lt;/string&gt;
+&lt;key&gt;UserPassword&lt;/key&gt;
+&lt;string&gt;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&lt;/string&gt;
+</code></pre></div></div>
+
+<p>Make a note of the username, which starts with 8021x:BTRcon/ and ends with some variation of your BT username. Also make a note of the password, which is a random string of numbers and letters.</p>
+
+<p>The second section is the section that contains the generic (non-unique) BT 802.1X certificate, which is used as a “trusted certificate” to prove that the hotspot you are connecting to really belongs to BT Wi-Fi:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;key&gt;PayloadCertificateFileName&lt;/key&gt;
+&lt;string&gt;BTwifi-X_DigicertRootCA.pem&lt;/string&gt;
+&lt;key&gt;PayloadContent&lt;/key&gt;
+&lt;data&gt;
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+...
+&lt;/data&gt;
+</code></pre></div></div>
+
+<p>If you are well-versed on certificates, extract the Base64 certificate data from the “mobileconfig” file and transform it into a correctly-formatted certificate file and name it “BTwifi-X_DigicertRootCA.pem”.</p>
+
+<p>Otherwise, if you prefer convenience and you are happy to trust this website as a source, feel free to <a href="/attachments/BTwifi-X_DigicertRootCA.pem">click here to download the BT Wi-Fi trust certificate</a>.</p>
+
+<h4 id="configuring-the-8021x-connection-on-windows">Configuring the 802.1X connection on Windows</h4>
+
+<p>In order to enable the automatic BT Wi-Fi login from a Windows machine, you need to manually create the wireless profile.</p>
+
+<p>To start with, you will need to add the BT 802.1X certificate to your trusted certificate store:</p>
+
+<ol>
+  <li>
+    <p>Double-click the “BTwifi-X_DigicertRootCA.pem” file in Windows Explorer.</p>
+  </li>
+  <li>
+    <p>The certificate will be shown. Verify that it is issued to “DigiCert Global Root CA” and that it is issued by “DigiCert Inc”.</p>
+  </li>
+  <li>
+    <p>If you downloaded the certificate from above and you wish to perform a further check on the certificate, then go into the Details tab and check that the Signature is “<code class="highlighter-rouge">08 3B E0 56 90 42 46 B1 A1 75 6A C9 59 91 C7 4A</code>”.</p>
+  </li>
+  <li>
+    <p>On the “General” tab, click the “Install Certificate…” button.</p>
+  </li>
+  <li>
+    <p>In “Store Location”, select “Local Machine” and click “Next”. You may be presented with a UAC privilege prompt. Confirm that you wish to continue.</p>
+  </li>
+  <li>
+    <p>When asked, select “Place all certificates in the following store”.</p>
+  </li>
+  <li>
+    <p>Click “Browse”, and select “Trusted Root Certification Authorities”.</p>
+  </li>
+  <li>
+    <p>Click “OK”.</p>
+  </li>
+  <li>
+    <p>Click “Next”, and then “Finish” to confirm.</p>
+  </li>
+</ol>
+
+<p>Now that you have the BT 802.1X certificate installed and trusted, you can now configure the wireless profile to connect to “BTWifi-X” hotspots: </p>
+
+<ol>
+  <li>
+    <p>Go into “Control Panel”, and then into “Network &amp; Sharing Center”.</p>
+  </li>
+  <li>
+    <p>Click “Set up a new connection or network”.</p>
+  </li>
+  <li>
+    <p>When prompted, select “Manually connect to a wireless network” and then click “Next”.</p>
+  </li>
+  <li>
+    <p>In “Network Name”, enter: BTWifi-X</p>
+  </li>
+  <li>
+    <p>In “Security Type”, select “WPA2-Enterprise”.</p>
+  </li>
+  <li>
+    <p>Make sure that “Start this connection automatically” is checked, and click “Next”.</p>
+  </li>
+  <li>
+    <p>When prompted, click “Change connection settings”.</p>
+  </li>
+  <li>
+    <p>In the “Security” tab, under “Choose a network authentication method”, select “Microsoft: EAP-TTLS”.</p>
+  </li>
+  <li>
+    <p>Click the “Settings” button next to “Microsoft: EAP-TTLS”.</p>
+  </li>
+  <li>
+    <p>Under “Connect to these servers”, enter: <code class="highlighter-rouge">8021x.bt.com</code></p>
+  </li>
+  <li>
+    <p>Under “Trusted Root Certification Authorities”, place a checkbox next to “<code class="highlighter-rouge">8021x.bt.com</code>”.</p>
+  </li>
+  <li>
+    <p>On the same dialog box, uncheck “Enable identity privacy” so that it is disabled.</p>
+  </li>
+  <li>
+    <p>Make sure that “Unencrypted password (PAP)” is selected under “Select a non-EAP method for authentication”.</p>
+  </li>
+  <li>
+    <p>Click “OK” to return back to the “BTWifi-X Wireless Network Properties” dialog.</p>
+  </li>
+  <li>
+    <p>Click the “Advanced settings” button.</p>
+  </li>
+  <li>
+    <p>Place a check in the box next to “Specify authentication mode”, and then select “User authentication” in the drop-down box.</p>
+  </li>
+  <li>
+    <p>Click the “Save Credentials” button.</p>
+  </li>
+  <li>
+    <p>When prompted, enter the full username and password that you extracted from the “mobileconfig” file above. The username starts with <code class="highlighter-rouge">8021x:BTRcon/</code> and ends with some variation of your BT username.</p>
+  </li>
+  <li>
+    <p>Click “OK”, and then click “OK” twice more to close each dialog box. Finally, click “Close”.</p>
+  </li>
+</ol>
+
+<p>You should now be able to connect to “BTWifi-X” from the wireless networks list. </p>
+
+<h4 id="configuring-the-8021x-connection-on-other-platforms">Configuring the 802.1X connection on other platforms</h4>
+
+<p>I am unable to provide specific instructions for other platforms, such as Android, but the following configuration settings should be of use to power users wishing to configure this on their devices:</p>
+
+<ul>
+  <li>
+    <p>Wireless Service Set Identifier (SSID): <code class="highlighter-rouge">BTWifi-X</code></p>
+  </li>
+  <li>
+    <p>Wireless authentication method: WPA2 Enterprise</p>
+  </li>
+  <li>
+    <p>Wireless authentication EAP protocol: EAP-TTLS</p>
+  </li>
+  <li>
+    <p>Inner EAP-TTLS authentication protocol: PAP</p>
+  </li>
+  <li>
+    <p>Identity Privacy: Disabled</p>
+  </li>
+  <li>
+    <p>Username: <code class="highlighter-rouge">8021x:BTRCon/newprof/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:XXX-XXX</code> (as above)</p>
+  </li>
+  <li>
+    <p>Password: <code class="highlighter-rouge">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</code> (as above)</p>
+  </li>
+  <li>
+    <p>Trusted Certificates: “DigiCert Global Root CA” certificate (as above)</p>
+  </li>
+  <li>
+    <p>Trusted Server Certificate Names / Connect To Names: 8021x.bt.com</p>
+  </li>
+</ul>
+
+<h4 id="important-warning">Important Warning</h4>
+
+<p>This bit really is important. Please read it.</p>
+
+<p>Each BT Wi-Fi Configuration Profile UNIQUELY IDENTIFIES YOU, and contains specific authentication credentials linked to your BT Wi-Fi account. DO NOT SHARE your Configuration Profile, or any details from it, with anyone else.</p>
+
+<p>You are NOT ANONYMOUS when using the BT Wi-Fi service. If the service is abused, BT will be able to identify that the abuse is coming from your BT Wi-Fi identity and your service will likely be terminated by BT. You have been warned. Just don’t do it.</p>
+
+<p>You perform the above actions ENTIRELY AT YOUR OWN RISK. I am not affiliated with BT in any way, and do not take any responsibility for anything that may happen as a result of following the above instructions. </p>
+:ET

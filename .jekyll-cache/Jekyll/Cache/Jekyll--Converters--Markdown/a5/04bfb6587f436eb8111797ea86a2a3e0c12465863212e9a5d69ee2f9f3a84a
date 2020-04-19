@@ -1,0 +1,2 @@
+I"�<p>ICMP, or “Internet Control Message Protocol”, is a protocol designed to help computers understand when things go wrong out on a network. It’s a supporting protocol - that is, to say, that IP does not strictly require on ICMP to function, however typical networking devices such as routers and endpoints are expected to speak and understand ICMP. You might also know ICMP thanks to “ping”, a utility designed to see if a remote computer on a network is alive and connected. </p>
+:ET

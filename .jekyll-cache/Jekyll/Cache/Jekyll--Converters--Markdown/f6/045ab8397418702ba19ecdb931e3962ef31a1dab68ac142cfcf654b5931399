@@ -1,0 +1,114 @@
+I"Å<p><strong>I‚Äôm Neil</strong>. I live in Glasgow, Scotland and I work in the IT industry,
+primarily in public sector outsourcing. I have a keen interest in <strong>networking</strong>
+with a deep understanding of IP and higher-level protocols, <strong>systems
+programming</strong> as well as <strong>infrastructure design</strong> at enterprise scale.</p>
+
+<h2 id="programming-languages">Programming Languages</h2>
+
+<p>My programming language of choice at the moment is <strong>Go</strong>, although I do also
+have experience with <strong>C</strong> and <strong>Python</strong>. I have substantial working experience with <strong>Bash</strong> and <strong>PowerShell</strong> scripting languages, as well as
+<strong>Lua</strong> in an application-embedded context.</p>
+
+<h2 id="open-source-projects">Open Source Projects</h2>
+
+<p><strong>yggdrasil</strong> (Contributor, <a href="https://github.com/yggdrasil-network/yggdrasil-go">GitHub</a>, <a href="https://yggdrasil-network.github.io">Website</a>)</p>
+
+<p>A cross-platform prototype of an end-to-end encrypted IPv6 overlay network,
+written in Go. It implements a new and experimental compact routing scheme based
+around a globally-agreed spanning tree.</p>
+
+<p><strong>seaglass</strong> (Author, <a href="https://github.com/neilalexander/seaglass">GitHub</a>, <a href="seaglass.md">Details</a>)</p>
+
+<p>A native Matrix client for macOS, written in Swift and using native Cocoa user
+interface frameworks. Primarily powered by the Matrix iOS SDK.</p>
+
+<p><strong>jnacl</strong> (Author, <a href="https://github.com/neilalexander/jnacl">GitHub</a>, <a href="jnacl.md">Details</a>)</p>
+
+<p>Pure Java implementation of a number of NaCl elliptic curve primitives,
+including the Curve25519 elliptic curve, Xsalsa20 stream cipher and Poly1305
+message authentication algorithm.</p>
+
+<p><strong>sigmavpn</strong> (Author, <a href="https://github.com/neilalexander/sigmavpn">GitHub</a>)</p>
+
+<p>Incredibly lightweight point-to-point VPN solution for Linux and UNIX-based
+systems, written in C, making use of elliptic curve cryptography. A purely
+native Android port was also created.</p>
+
+<h2 id="publications">Publications</h2>
+
+<h4 id="user-level-data-centre-tomography-acm-sigcomm-helsinki-finland">User-Level Data Centre Tomography (ACM SIGCOMM, Helsinki, Finland)</h4>
+
+<p>Poster submission. Measurement and inference in data centres present a set of
+opportunities and challenges distinct from the Internet domain. Existing
+toolsets may be perturbed or be misled by issues related to virtualisation. Yet,
+while equally confronted by scale, data centres are relatively homogenous and
+symmetric. We believe these may be attributes to be exploited. However, data is
+required to better evaluate our hypotheses.</p>
+
+<p>Therefore, we introduce our efforts to gather data using a single framework from
+which we can launch tests of our choosing. Our observations reinforce recent
+claims, but indicate changes in the network. They also reveal additional
+obfuscations stemming from virtualisation.</p>
+
+<h2 id="industry-experience">Industry Experience</h2>
+
+<h4 id="lead-engineer-dxctechnology-glasgow-scotland">Lead Engineer, DXC.technology (Glasgow, Scotland)</h4>
+
+<p>Managing engineering efforts for managed desktop and IaaS services for UKPS
+clients, including application migration, mobility services and
+on-site/in-datacenter networks.</p>
+
+<ul>
+  <li>
+    <p>Maintaining direct customer-facing relationships, including requirements
+review and detailed technical solutioning alongside architects and account
+delivery teams</p>
+  </li>
+  <li>
+    <p>Engineering team leadership, including task allocation and tracking, problem
+and incident resolution and progress reporting to leadership</p>
+  </li>
+  <li>
+    <p>Hands-on technical design, implementation and supported end-to-end testing of
+infrastructure that includes, but is not limited to, Active Directory, SCCM,
+Citrix, AppSense</p>
+  </li>
+</ul>
+
+<h4 id="service-architect-hewlett-packard-enterprise-glasgow-scotland">Service Architect, Hewlett Packard Enterprise (Glasgow, Scotland)</h4>
+
+<p>Service architecture and environmental design/implementation, primarily in the
+virtualised and Managed Desktop workspace, including application virtualisation,
+desktop and user management and backend infrastructure to support large-scale
+desktop and service delivery using technologies including, but not limited to,
+SCCM, AppSense and Citrix.</p>
+
+<ul>
+  <li>
+    <p>Design work and implementation of networking and remote access/VPN, user
+authentication, desktop and application virtualisation in labs and production
+customer environments</p>
+  </li>
+  <li>
+    <p>Providing regular impacting on technical change, including service and
+customer impact</p>
+  </li>
+  <li>
+    <p>Development of automation utilities for rapid deployment and prototyping</p>
+  </li>
+</ul>
+
+<h2 id="education">Education</h2>
+
+<h4 id="bsc-hons-computing-science-1st-class-university-of-stirling-stirling-scotland">BSc Hons Computing Science (1st Class), University of Stirling (Stirling, Scotland)</h4>
+
+<p>Subjects of study include software development strategies, application
+development, networking and IP communications (SIP/VoIP), project management,
+information management (including XML, XSLT), programming language paradigms.</p>
+
+<h2 id="awards">Awards</h2>
+
+<h4 id="acm-sigcomm-undergraduate-research-prize-helsinki-finland">ACM SIGCOMM Undergraduate Research Prize (Helsinki, Finland)</h4>
+
+<p>Selected Finalist.</p>
+:ET

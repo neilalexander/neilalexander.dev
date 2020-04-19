@@ -1,0 +1,20 @@
+I"[<h1 id="jnacl">jnacl</h1>
+
+<p>jnacl is a library that implements some of Daniel J. Bernstein’s NaCl encryption
+primitives. The functions are written in pure Java, and are therefore very
+straight-forward to make use of in a Java application without the use of native
+libraries and bindings.</p>
+
+<p>The following primitives are included:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">curve25519</code>: Elliptic curve key agreement</li>
+  <li><code class="highlighter-rouge">salsa20</code>: Stream cipher</li>
+  <li><code class="highlighter-rouge">poly1305</code>: Message authenticator (MAC)</li>
+</ul>
+
+<p>It is open-source and <a href="https://github.com/neilalexander/jnacl">available on GitHub</a>.</p>
+
+<p>Even though it has not been comprehensively benchmarked, jnacl performs
+exceptionally well, even on resource-constrained Android platforms.</p>
+:ET
