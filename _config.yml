@@ -1,7 +1,5 @@
 name: neilalexander.dev
 title: neilalexander.dev
-description: >
-  Network enthusiast and occasional developer of small utilities.
 
 plugins:
   - jekyll-feed
