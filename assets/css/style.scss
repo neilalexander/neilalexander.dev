@@ -28,6 +28,10 @@ div.titleflex span.links a {
 	padding: 1em;
 }
 
+.markdown-body {
+	-webkit-font-smoothing: antialiased;
+}
+
 div.blogpost {
 	display: grid;
 	grid-gap: 10px;
