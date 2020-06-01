@@ -79,9 +79,11 @@ much any network topology (including over the internet, over local area networks
 even directly using wireless) and, moreover, we should be able to do so at scale.
 Some work will need to be done to create the HTTP boilerplate however, although I
 have done some preliminary work on HTTP/2 multiplexing over Yggdrasil which may fit
-this use-case nicely.
+this use-case nicely. We also have a number of other projects in the pipeline to
+explore, including DAT, although exploration remains surface-deep at this point.
 
-It's worth noting though that Yggdrasil is not perfect either. I have been one of two
+It's worth noting though that, even though Yggdrasil might help to solve the overlay
+routing problem, it is far from a perfect solution either. I have been one of two
 maintainers on the Yggdrasil Network project for over two years now and, although
 many of the design elements are sound, there are still weaknesses in the protocol
 design that need to be addressed in order for it to be truly resilient. Currently,
@@ -116,15 +118,21 @@ form of MSC1228 which aims to replace traditional Matrix user accounts with port
 identities which are cryptographically generated. Not covered yet by the MSC is how
 we will maintain a synchronised state between multiple devices owned by the same user,
 since the identity will effectively need to be "portable" before that can be achieved.
+It should, however, open up pathways for Matrix identities and accounts to be portable
+in the sense that you would be able to move between or operate across multiple servers
+without interruption - like changing your user ID.
 
 It's also possible that a user's device will be unreachable at pretty much any time,
 either because it has no network connectivity, it has ran out of power or has even
 just been switched off by the owner. Therefore, we will also be exploring whether 
-other more-static homeservers can be used as a type of mailbox for storing messages
-on behalf of a user while their own devices are offline. 
+a hybrid approach involving both static and peer-to-peer/single-user homeservers can
+provide a better experience, especially in situations where user devices are offline
+or unreachable. This will likely involve a form of federated backfilling where the
+various devices owned by a specific user can retrieve history from each other to
+provide a more unified experience across devices.
 
 P2P Matrix is still very much on the drawing board at this stage - this is just a
 taste of some of the issues still to be worked out and I expect that we will iterate
-on many designs before we arrive at a final destination. However, this is a project
-that has a lot of interest and an even higher level of potential. I look forward to
-being able to discuss more on our findings as and when we explore different options!
+on many designs before we arrive at a final destination. The P2P Matrix project has
+definitely garnered a lot of interest within recent months so watch this space - I'll
+be writing more as we make progress.
