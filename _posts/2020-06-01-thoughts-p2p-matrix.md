@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Thoughts on Peer-to-Peer Matrix"
-date: 2020-05-26 00:00:00 +0000
+date: 2020-06-01 00:00:00 +0000
 author: Neil Alexander
 index: false
 sitemap: false
