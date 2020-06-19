@@ -26,4 +26,4 @@ There aren't any posts here yet. Check back soon!
   {% endfor %}
 {% endunless %}
 
-<div style='text-align: center; margin-top: 6em; color: #EAECEF;'><a href="/feed.xml">Atom/RSS</a></div>
+<div style="text-align: center; margin-top: 6em;"><a href="/feed.xml" style="color: #EAECEF;">Atom/RSS</a></div>
