@@ -25,3 +25,5 @@ There aren't any posts here yet. Check back soon!
   </div>
   {% endfor %}
 {% endunless %}
+
+<div style='text-align: center;'><a href="/feed.xml">RSS</a></div>
