@@ -1,7 +1,7 @@
 ---
 ---
 
-**I'm Neil**. I live near Glasgow, Scotland and I am a Software Developer working
+**I'm Neil**. I live in the North East of England and I am a Software Developer working
 on [Matrix](https://matrix.org) at [New Vector](https://vector.im). I have a keen
 interest in security, privacy, decentralised systems and computer networking.
 I also have experience in end-user compute and enterprise-scale systems architecture.
