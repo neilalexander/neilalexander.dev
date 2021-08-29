@@ -40,11 +40,11 @@ the maximum size of the slice. The actual value contents of the slice are stored
 underlying memory in a "backing array", and the slice itself serves as a reference to
 this space.
 
-As a result, copying a slice doesn't actually copy the underlying array or the
-data within - it merely copies the pointer, size and capacity. Manipulating the boundaries
-of a slice is therefore extremely cheap as this only requires modifying the pointer or size
-internally. It also means that you can have multiple slice references pointing to the same
-underlying array in memory, even if those slices are of different sizes!
+As a result, copying a slice or passing it as a value doesn't actually copy the underlying
+array or the data within - it merely copies the pointer, size and capacity. Manipulating the
+boundaries of a slice is therefore extremely cheap as this only requires modifying the pointer
+or size internally. It also means that you can have multiple slice references pointing to the
+same underlying array in memory, even if those slices are of different sizes!
 
 In this case, the thing being passed-by-value is the *slice reference*, not the contents of
 the slice!
@@ -64,8 +64,8 @@ In the background, the Go compiler rewrites various map syntax to special functi
 the `runtime` package which take a pointer to this struct. The header contains various fields, including the number of cells, a hash seed, flags and pointers to the top-level hashmap
 buckets.
 
-As with slices, copying a map doesn't actually copy the underlying hashmap — it
-merely copies the pointer to the header struct. Therefore, copying a map reference is
+As with slices, copying a map or passing it as a value doesn't actually copy the underlying hashmap
+— it merely copies the pointer to the header struct. Therefore, copying a map reference is
 just giving you multiple references to the same underlying map in memory.
 
 Once again, it is the *map reference* that is being passed-by-value, not the contents of the
