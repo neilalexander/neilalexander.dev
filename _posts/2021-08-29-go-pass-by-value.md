@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Go is pass-by-value — except when it isn't"
+title: "Go is pass-by-value — but it might not always feel like it"
 date: 2021-08-29 22:00:00 +0000
 author: Neil Alexander
 index: true
