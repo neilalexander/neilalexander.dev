@@ -81,7 +81,8 @@ mutex and lists of active senders and receivers.
 
 By now you'll be probably spotting the pattern — indeed copying the channel is just
 copying the pointer to the header struct, so you're really just ending up with more
-references to the same channel.
+references to the same channel. Indeed this is necessary as you will want to be able to
+pass these references around so that you can send to or receive from the channel elsewhere.
 
 The *channel reference* is being passed-by-value, not the queued values in the channel.
 
