@@ -28,12 +28,12 @@ To better understand what's going on with more complex types, it's important to 
 Go really has two classes of datatype: "value" types and "reference" types. Primitive types
 are all "value" types — those include the usual `int`, `string`, `byte`, `rune`, `bool` types
 and so on. Pointer types are "reference" types. However, maps, slices and channels are all
-special types that either *are or contain references*. The following sections explore at a high
+special types that *are or contain references*. The following sections explore at a high
 level how these work.
 
 ### Slices
 
-A slice is a flexible reference to an array and effectively has three fields: a pointer
+A slice is a flexible reference to an array and has three fields: a pointer
 to the underlying memory, a "size" field which specifies how many elements of
 the underlying array are referenced, and finally, a "capacity" field which specifies
 the maximum size of the slice. The actual value contents of the slice are stored in the
