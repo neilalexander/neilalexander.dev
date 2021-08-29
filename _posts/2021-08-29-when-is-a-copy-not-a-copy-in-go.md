@@ -143,5 +143,6 @@ have the potential to lead you astray if you make incorrect assumptions about wh
 a copy will take place.
 
 So, if you are in any doubt and need to guarantee that a true copy is passed, always *copy
-the maps or slices yourself*!
+the maps or slices yourself*. Be especially mindful that returning references allow a caller
+or consumer to mutate the referenced item, even in libraries or across package boundaries!
 
