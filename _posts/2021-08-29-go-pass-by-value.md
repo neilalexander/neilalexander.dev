@@ -6,8 +6,8 @@ author: Neil Alexander
 index: true
 ---
 
-Go is a language which passes by value, which effectively means that if you give a value
-as a parameter to a function, the received value within the function is actually a *copy*
+Go is a programming language which passes by value, which effectively means that if you give a
+value as a parameter to a function, the received value within the function is actually a *copy*
 of the original. You can modify it however you wish and your changes will not affect the
 original value or escape the function scope. This is in contrast to some languages which
 pass values by reference instead of copying them.
