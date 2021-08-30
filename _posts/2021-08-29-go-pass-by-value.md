@@ -24,12 +24,10 @@ strictest sense, but it's actually the pointer's value itself that is being copi
 thing that the pointer refers to. This makes it possible to deliberately allow multiple
 functions, goroutines or sections of code to perform operations on the same variables.
 
-To better understand what's going on with more complex types, it's important to know that
-Go really has two classes of datatype: "value" types and "reference" types. Primitive types
-are all "value" types — those include the usual `int`, `string`, `byte`, `rune`, `bool` types
-and so on. Pointer types are "reference" types. However, maps, slices and channels are all
-special types that *are or contain references*. The following sections explore at a high
-level how these work.
+Like many languages, Go has two classes of datatype: "value" types and "reference" types.
+Primitive types are all "value" types — those include the usual `int`, `string`, `byte`
+`rune`, `bool` types and so on. Pointer types are "reference" types. However, maps, slices
+and channels are all special types that *are or contain references*.
 
 ### Slices
 
@@ -62,7 +60,7 @@ returned by `append` will be a copy or not.
 A map reference is actually a pointer to a map header struct in memory (`type hmap` internally).
 In the background, the Go compiler rewrites various map syntax to special functions within
 the `runtime` package which take a pointer to this struct. The header contains various fields, including the number of cells, a hash seed, flags and pointers to the top-level hashmap
-buckets.
+buckets. Maps can expand at runtime by allocating additional buckets and chaining them together.
 
 As with slices, copying a map or passing it as a value doesn't actually copy the underlying hashmap
 — it merely copies the pointer to the header struct. Therefore, copying a map reference is
@@ -106,8 +104,8 @@ The *references themselves* will be copied, but *only* the references! Therefore
 struct as a value that contains a map, channel or slice (as opposed to passing a pointer
 to the struct) is not enough to guarantee that the receiving function can't modify the
 contents of the original struct beyond it's own scope — unless you specifically create
-a copy of the map or slice, the receiver will be accessing and modifying the same underlying
-memory. 
+a copy of the map or slice. The value-typed fields in the struct will be copied but maps and
+backing arrays won't be.
 
 ### Data races
 
