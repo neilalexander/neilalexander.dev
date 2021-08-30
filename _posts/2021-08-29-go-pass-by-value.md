@@ -17,7 +17,7 @@ is really happening in practice. You pass a map into a function only to find tha
 function modifies the map, it gets modified everywhere. Worse, the program might just break
 in mysterious ways or panic altogether! What gives?
 
-You have hopefully come across references already in the form of pointers — that is, using
+Go already exposes references to the programmer in the form of pointers — that is, using
 `*type` instead of `type` and then taking the reference of a variable using `&variable`.
 In this case, passing a pointer into a function is still *passing by value* in the
 strictest sense, but it's actually the pointer's value itself that is being copied, not the
