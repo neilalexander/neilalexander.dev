@@ -24,10 +24,10 @@ strictest sense, but it's actually the pointer's value itself that is being copi
 thing that the pointer refers to. This makes it possible to deliberately allow multiple
 functions, goroutines or sections of code to perform operations on the same variables.
 
-Like many languages, Go has two classes of datatype: "value" types and "reference" types.
-Primitive types are all "value" types — those include the usual `int`, `string`, `byte`
-`rune`, `bool` types and so on. Pointer types are "reference" types. However, maps, slices
-and channels are all special types that *are or contain references*.
+Like many languages, Go has two classes of datatype: those with "value" semantics and
+those with "reference" semantics. Primitive types are all "value" types — those include the usual
+`int`, `string`, `byte` `rune`, `bool` types and so on. Pointer types are, in effect, "reference"
+types. However, maps, slices and channels are all special types that *are or contain references*.
 
 ### Slices
 
@@ -93,8 +93,8 @@ behaviour is actually enforced by the type system. The header itself is not copi
 ### Structs
 
 So at this point, you might be wondering about structs. Strictly speaking, structs
-aren't primitive types, but they also aren't reference types in the same way that
-slices, maps and channels are. They are "value" types, however, and therefore
+aren't primitive types, but they also don't contain built-in references in the same way that
+slices, maps and channels do. They are "value" types, however, and therefore
 passing a struct (rather than a pointer to a struct) means that the struct will be copied.
 This also means that all value types within the struct are copied — for example, `string` or
 `int` fields will have their values copied too. However, a struct can also contain slice, map
