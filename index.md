@@ -11,7 +11,7 @@ I also have experience in end-user compute and enterprise-scale systems architec
 {% unless indexable_posts.size == 0 %}
 ## Latest
 <ul>
-{% for post in indexable_posts limit:5 %}
+{% for post in indexable_posts limit:3 %}
     <li>
       {{ post.date | date: "%d %b %Y" }} — <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
