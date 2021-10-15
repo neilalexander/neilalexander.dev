@@ -2,7 +2,7 @@
 ---
 
 **I'm Neil**. I live in the North East of England and I am a Software Developer working
-on [Matrix](https://matrix.org) at [New Vector](https://vector.im). I have a keen
+on [Matrix](https://matrix.org) at [Element](https://element.io). I have a keen
 interest in security, privacy, decentralised systems and computer networking.
 I also have experience in end-user compute and enterprise-scale systems architecture.
 
@@ -20,6 +20,11 @@ I also have experience in end-user compute and enterprise-scale systems architec
 {% endunless %}
 
 ## Projects
+
+**pinecone** (Author, [GitHub](https://github.com/matrix-org/pinecone))
+— A prototype of a name-independent, self-healing compact routing scheme, designed
+for mesh networks and peer-to-peer applications, written in Go. Originally created
+to underpin the P2P Matrix project.
 
 **dendrite** (Contributor, [GitHub](https://github.com/matrix-org/dendrite), [Website](https://matrix.org/docs/projects/server/dendrite))
 — A next-generation Matrix homeserver, written in Go, designed to operate at scales
