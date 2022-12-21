@@ -2,7 +2,7 @@
 ---
 
 **I'm Neil**. I live in the North East of England and I am a Software Developer working
-on [Matrix](https://matrix.org) at [Element](https://element.io). I have a keen
+on [NATS](https://nats.io) at [Synadia](https://synadia.com). I have a keen
 interest in security, privacy, decentralised systems and computer networking.
 I also have experience in end-user compute and enterprise-scale systems architecture.
 
