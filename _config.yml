@@ -1,7 +1,7 @@
 name: neilalexander.dev
 title: neilalexander.dev
 
-include: [".well-known"]
+include: [".well-known", "xrpc"]
 
 plugins:
   - jekyll-feed
