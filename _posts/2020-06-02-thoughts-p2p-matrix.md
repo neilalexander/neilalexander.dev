@@ -3,8 +3,8 @@ layout: post
 title: "Thoughts on Peer-to-Peer Matrix"
 date: 2020-06-02 15:00:00 +0000
 author: Neil Alexander
-index: true
-sitemap: true
+index: false
+sitemap: false
 ---
 
 Since starting at New Vector in December 2019, I have been working mostly on
