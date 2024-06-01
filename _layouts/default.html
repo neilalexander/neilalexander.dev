@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% seo %}
     {% feed_meta %}
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="alternate" type="application/atom+xml" title="Neil Alexander’s blog" href="/feed.xml">
-  </head>
-  <body>
-    <div class="container-lg px-3 my-5 markdown-body">
-      <div class='titleflex'>
-        <span class='logo'>
-          <a href="/index.html"><img src="/assets/images/logo.png" alt="neilalexander.dev" style="max-width: 350px;" /></a>
-        </span>
-        <span class='links'>
-          <a href='/index.html'>Home</a>
-          <a href='/blog.html'>Blog</a>
-          <a href='http://github.com/neilalexander'>GitHub</a>
-        </span>
-      </div>
-      {{ content }}
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
+    <link rel="alternate" type="application/atom+xml" title="Neil's blog" href="/feed.xml">
+</head>
 
-  </body>
+<body>
+    <div class="container-lg px-3 my-5 markdown-body">
+        <div class='titleflex'>
+            <span class='header'>
+                Neil
+            </span>
+            <span class='links'>
+                <a href='/index.html'>Home</a>
+                <a href='/blog.html'>Blog</a>
+                <a href='http://github.com/neilalexander'>GitHub</a>
+            </span>
+        </div>
+        {{ content }}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+        integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+</body>
+
 </html>

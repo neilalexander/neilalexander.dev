@@ -18,3 +18,9 @@ defaults:
       path:            "_posts/*.md"
     values:
       sitemap:         true
+
+feed:
+  tags:
+    except:
+      - tag-to-exclude
+      - another-tag
