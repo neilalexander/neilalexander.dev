@@ -6,8 +6,6 @@ author: Neil Alexander
 index: true
 ---
 
-# On Canonical JSON in Matrix
-
 Today, the Matrix protocol is pretty much entirely JSON over HTTP. This is true of the client-server protocol, the server-server (federation) protocol or any of the other supporting protocols (i.e. for appservices/bridges). When you send a message into a room, a persistent data unit (PDU, otherwise known as an “event”) is generated which is also JSON. Same for typing notifications, read receipts, encryption key exchanges, E2E device list updates. It’s all JSON, all the way down.
 
 In order for Matrix to be able to operate as a largely decentralised federated system, cryptographic signatures are necessary in order for other servers in the federation to be able to verify that an event or a request truly originated from the server that claims to be the origin. These signatures form a critical part of the trust chain in the Matrix protocol and are important to prevent forgery and to prove authenticity, which means that we need a reproducible way to sign a JSON blob and know that other servers will be able to verify that signature correctly (or indeed to correctly classify a signature as invalid due to tampering). Not only are events signed but so are all federation request bodies between different servers, for much the same reason. 
