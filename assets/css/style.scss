@@ -17,6 +17,11 @@ a {
     border-bottom: 1px solid GrayText;
 }
 
+.markdown-body pre {
+    background-color: Field;
+    color: FieldText;
+}
+
 div.linkmenu {
     float: right;
 }
