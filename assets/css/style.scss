@@ -3,6 +3,12 @@
 
 @import "{{ site.theme }}";
 
+body {
+    background-color: Canvas;
+    color: CanvasText;
+    color-scheme: light dark;
+}
+
 div.linkmenu {
     float: right;
 }
