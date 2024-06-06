@@ -1,7 +1,34 @@
----
+--- 
 ---
 
 @import "{{ site.theme }}";
+
+body {
+    background-color: Canvas;
+    color: CanvasText;
+    color-scheme: light dark;
+}
+
+a {
+    color: LinkColor;
+    filter: brightness(120%);
+}
+
+.markdown-body h2 {
+    border-bottom: 1px solid GrayText;
+}
+
+.markdown-body .highlight pre, .markdown-body pre {
+    background-color: Canvas;
+    color: CanvasText;
+    border-radius: 0px;
+    filter: brightness(70%);
+}
+
+.markdown-body blockquote > :last-child {
+    color: CanvasText;
+    filter: brightness(70%);
+}
 
 div.linkmenu {
     float: right;
@@ -13,7 +40,7 @@ div.titleflex {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #eaecef;
+    border-bottom: 1px solid GrayText;
     margin-bottom: 2em;
 }
 
@@ -25,6 +52,10 @@ div.titleflex span.sitetitle {
 div.titleflex span.links a {
     display: inline-block;
     padding: 1em;
+}
+
+div.titleflex span.links a:last-child {
+    padding-right: 0em;
 }
 
 .markdown-body {
@@ -60,7 +91,8 @@ div.blogpost div#overview div#title {
 
 div.blogpost div#overview div#excerpt {
     padding-top: 0.2em;
-    color: #444444;
+    color: CanvasText;
+    filter: brightness(60%);
     text-decoration: none;
     font-size: 1em;
 }
