@@ -37,19 +37,10 @@ to underpin the P2P Matrix project.
 — A next-generation Matrix homeserver, written in Go, designed to operate at scales
 ranging from single-user embedded homeservers to large-scale polylith deployments.
 
-**seaglass** (Author, [GitHub](https://github.com/neilalexander/seaglass))
-— A native Matrix client for macOS, written in Swift and using native Cocoa user
-interface frameworks. Primarily powered by the Matrix iOS SDK.
-
 **jnacl** (Author, [GitHub](https://github.com/neilalexander/jnacl))
 — Pure Java implementation of some NaCl ECC encryption and authentication primitives,
 including the Curve25519 elliptic curve, Xsalsa20 stream cipher and Poly1305
 message authentication algorithm.
-
-**sigmavpn** (Author, [GitHub](https://github.com/neilalexander/sigmavpn))
-— Incredibly lightweight point-to-point VPN solution for Linux and UNIX-based
-systems, written in C, making use of elliptic curve cryptography. A pure
-native Android port was also created.
 
 ## Contact
 

@@ -1,4 +1,4 @@
----
+--- 
 ---
 
 @import "{{ site.theme }}";
@@ -10,16 +10,28 @@ body {
 }
 
 a {
-    color: AccentColor;
+    color: LinkColor;
+    filter: brightness(120%);
+}
+
+.markdown-body {
+    text-align: justify;
 }
 
 .markdown-body h2 {
     border-bottom: 1px solid GrayText;
 }
 
-.markdown-body pre {
-    background-color: Field;
-    color: FieldText;
+.markdown-body .highlight pre, .markdown-body pre {
+    background-color: Canvas;
+    color: CanvasText;
+    border-radius: 0px;
+    filter: brightness(70%);
+}
+
+.markdown-body blockquote > :last-child {
+    color: CanvasText;
+    filter: brightness(70%);
 }
 
 div.linkmenu {
@@ -44,6 +56,10 @@ div.titleflex span.sitetitle {
 div.titleflex span.links a {
     display: inline-block;
     padding: 1em;
+}
+
+div.titleflex span.links a:last-child {
+    padding-right: 0em;
 }
 
 .markdown-body {
@@ -79,7 +95,8 @@ div.blogpost div#overview div#title {
 
 div.blogpost div#overview div#excerpt {
     padding-top: 0.2em;
-    color: #444444;
+    color: CanvasText;
+    filter: brightness(60%);
     text-decoration: none;
     font-size: 1em;
 }
