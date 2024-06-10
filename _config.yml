@@ -1,6 +1,6 @@
 name: neilalexander.dev
 title: neilalexander.dev
-#url: "https://neilalexander.dev"
+url: "https://neilalexander.dev"
 
 include: [".well-known", "xrpc"]
 
