@@ -10,7 +10,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
 
-#theme: jekyll-theme-minimal
+theme: jekyll-theme-minimal
 #baseurl: "/"
 
 defaults:
