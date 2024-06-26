@@ -99,6 +99,6 @@ div.blogpost div#overview div#excerpt {
 
 @media (prefers-color-scheme: dark) {
     .markdown-body img#contactbyemail {
-        filter: invert(1);
+        filter: invert(88.1%) hue-rotate(90deg);
     }
 }
