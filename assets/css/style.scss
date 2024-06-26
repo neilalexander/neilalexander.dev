@@ -96,3 +96,9 @@ div.blogpost div#overview div#excerpt {
     text-decoration: none;
     font-size: 1em;
 }
+
+@media (prefers-color-scheme: dark) {
+    .markdown-body img#contactbyemail {
+        filter: invert(1);
+    }
+}

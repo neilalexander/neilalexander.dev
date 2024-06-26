@@ -46,4 +46,4 @@ message authentication algorithm.
 
 You can contact me by email at the following address:
 
-<img src='assets/images/email.png' width='280px' />
+<img src='assets/images/email.png' width='280px' id='contactbyemail' />
