@@ -23,6 +23,10 @@ I also have experience in end-user compute and enterprise-scale systems architec
 
 ## Projects
 
+**nats-server** (Maintainer, [GitHub](https://github.com/nats-io/nats-server), [Website](https://www.nats.io))
+— A high-performance, lightweight, open-source messaging system designed for building
+modern distributed systems.
+
 **yggdrasil** (Maintainer, [GitHub](https://github.com/yggdrasil-network/yggdrasil-go), [Website](https://yggdrasil-network.github.io))
 — A cross-platform prototype of an end-to-end encrypted IPv6 overlay network,
 written in Go. It implements a new and experimental compact routing scheme based
