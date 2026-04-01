@@ -2,7 +2,7 @@
 layout: post
 title: "Comments on Canonical JSON in Matrix"
 date: 2024-06-05 23:10:00 +0100
-author: Neil Alexander
+author: Neil
 index: true
 ---
 

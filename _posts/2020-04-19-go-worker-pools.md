@@ -2,7 +2,7 @@
 layout: post
 title: "Worker pools in Go using buffered channels and Goroutines"
 date: 2020-04-19
-author: Neil Alexander
+author: Neil
 index: true
 ---
 

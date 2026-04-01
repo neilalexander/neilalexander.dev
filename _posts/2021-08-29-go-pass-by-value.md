@@ -2,7 +2,7 @@
 layout: post
 title: "Go is pass-by-value — but it might not always feel like it"
 date: 2021-08-29 22:00:00 +0000
-author: Neil Alexander
+author: Neil
 index: true
 ---
 
@@ -144,4 +144,3 @@ a copy will take place.
 So, if you are in any doubt and need to guarantee that a true copy is passed, always *copy
 the maps or slices yourself*. Be especially mindful that returning references allow a caller
 or consumer to mutate the referenced item, even in libraries or across package boundaries!
-

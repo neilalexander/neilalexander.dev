@@ -2,7 +2,7 @@
 layout: post
 title: "Understanding ICMP and why you shouldn't just block it outright"
 date: 2017-04-16 00:00:00 +0000
-author: Neil Alexander
+author: Neil
 redirect_from: "/articles/2017/4/16/understanding-icmp"
 index: false
 ---

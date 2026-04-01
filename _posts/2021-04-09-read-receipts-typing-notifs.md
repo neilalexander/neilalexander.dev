@@ -2,7 +2,7 @@
 layout: post
 title: "Read receipts, presence and typing notifications should be disabled by default"
 date: 2021-04-09 20:00:00 +0000
-author: Neil Alexander
+author: Neil
 index: true
 sitemap: true
 ---
